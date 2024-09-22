@@ -3,7 +3,7 @@
     <!-- Navbar -->
     <nav class="navbar">
       <div class="navbar-header">
-        <router-link class="navbar-brand" to="/home">Vincent Car</router-link>
+        <router-link class="navbar-brand" to="/home" style="color:white ;">Vincent Car</router-link>
         <button class="navbar-toggler" type="button" @click="toggleNavbar">
           <span class="navbar-toggler-icon"></span>
           <span class="navbar-toggler-icon"></span>
@@ -74,7 +74,7 @@ export default {
 /* Navbar Styles */
 .navbar {
   background-color:#919497;
-  padding: 15px 30px;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -158,7 +158,7 @@ export default {
 /* Responsive Styles for Large Screens */
 @media (min-width: 992px) {
   .navbar {
-    padding: 20px 50px;
+    padding: 4px 20px;
    
   }
   .navbar-header {
@@ -191,14 +191,15 @@ export default {
 
 /* Footer Styles */
 .footer {
-  background-color: var(--footer-bg);
-  color: var(--text-color);
-  padding: 20px 30px;
+  background-color: #919497;
+  color: white;
+  padding: 1px 5px;
   text-align: center;
 }
 
 .footer-links {
   margin-top: 10px;
+  color: white;
   display: flex;
   justify-content: center;
   gap: 10px;
