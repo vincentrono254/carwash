@@ -2,10 +2,14 @@
   <div class="app-container">
     <!-- Navbar -->
     <nav class="navbar">
-      <router-link class="navbar-brand" to="/home">Vincent Car Wash</router-link>
-      <button class="navbar-toggler" type="button" @click="toggleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <div class="navbar-header">
+        <router-link class="navbar-brand" to="/home">Vincent Car</router-link>
+        <button class="navbar-toggler" type="button" @click="toggleNavbar">
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
       <div :class="['navbar-menu', isNavbarOpen ? 'open' : '']">
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -69,13 +73,21 @@ export default {
 
 /* Navbar Styles */
 .navbar {
-  background-color: var(--primary-color);
+  background-color:#919497;
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: var(--text-color);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.navbar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .navbar-brand {
@@ -89,35 +101,44 @@ export default {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
 }
 
 .navbar-toggler-icon {
   width: 25px;
   height: 3px;
   background-color: var(--text-color);
-  display: block;
-  margin: 5px 0;
+  margin: 4px 0;
 }
 
 .navbar-menu {
-  display: none;
-  flex-direction: column;
-  gap: 10px;
   position: absolute;
   top: 60px;
-  right: 30px;
+  right: 0;
   background-color: var(--primary-color);
   padding: 10px;
   border-radius: 8px;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: max-height 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
 }
 
 .navbar-menu.open {
   display: flex;
+  max-height: 300px;
 }
 
 .navbar-nav {
   display: flex;
-  gap: 25px;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .nav-link {
@@ -134,52 +155,69 @@ export default {
   color: var(--text-color);
 }
 
+/* Responsive Styles for Large Screens */
+@media (min-width: 992px) {
+  .navbar {
+    padding: 20px 50px;
+   
+  }
+  .navbar-header {
+    flex-basis: 20%;
+  }
+  .navbar-brand {
+    font-size: 2.2em;
+  }
+  .navbar-toggler {
+    display: none;
+  }
+  .navbar-menu {
+    position: relative;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-height: none;
+    transition: none;
+  }
+  .navbar-nav {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
 /* Footer Styles */
 .footer {
   background-color: var(--footer-bg);
-  padding: 30px 0;
-  text-align: center;
   color: var(--text-color);
-  margin-top: 50px;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.footer p {
-  margin: 0;
-  font-size: 14px;
+  padding: 20px 30px;
+  text-align: center;
 }
 
 .footer-links {
   margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
-.footer a {
-  color: var(--accent-color);
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-.footer a:hover {
+.footer-links a {
   color: var(--text-color);
+  text-decoration: none;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .navbar-nav {
-    display: none;
-  }
+.footer-links a:hover {
+  color: var(--accent-color);
+}
 
-  .navbar-menu {
-    display: flex;
-  }
-
-  .footer {
-    padding: 20px 10px;
+/* Responsive Footer for Small Screens */
+@media (max-width: 600px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 5px;
   }
 }
 </style>

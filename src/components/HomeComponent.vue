@@ -17,7 +17,7 @@
     <div class="hero-content">
       <h1 class="hero-title">Vincent Car Wash</h1>
       <p class="hero-subtitle">Where shine meets perfection.</p>
-      <router-link to="/services" class="cta-button">Book Your Wash</router-link>
+      <router-link to="/contact" class="cta-button">Book Your Wash</router-link>
     </div>
   </div>
 </template>
