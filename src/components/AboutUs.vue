@@ -14,7 +14,7 @@
       <div class="about-text">
         <h2 class="about-heading">Our Story</h2>
         <p class="about-description">
-          At <span class="highlight">SparkleWash</span>, we believe every car deserves the utmost care and attention. What started as a small
+          At <span class="highlight">VincentWash</span>, we believe every car deserves the utmost care and attention. What started as a small
           neighborhood service has blossomed into a trusted name for car enthusiasts everywhere. We are committed to
           delivering top-tier service, from simple washes to full detailing. Our mission is to make your car look and
           feel brand new, every time you visit.
@@ -45,7 +45,7 @@
 
 <script>
 export default {
-  name: "AboutPage",
+  name: "AboutUs",
 };
 </script>
 

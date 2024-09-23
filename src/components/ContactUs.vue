@@ -15,7 +15,7 @@
       </div>
       <div class="info-card">
         <h3 class="info-title">Postal Address</h3>
-        <p class="info-detail">westlands Car Wash Lane, Nairobi city, parklands</p>
+        <p class="info-detail">Westlands Car Wash Lane, Nairobi City, Parklands</p>
       </div>
     </div>
 
@@ -43,21 +43,47 @@
 
 <script>
 export default {
-  name: "ContactPage",
+  name: "ContactComponent",
   data() {
     return {
       name: '',
       email: '',
       message: '',
+      accessKey: '93c7a6c1-4c29-4ee2-ba27-a188c4297895', // Replace with your access key
     };
   },
   methods: {
-    submitForm() {
-      alert(`Thank you, ${this.name}. Your message has been sent!`);
-      // Handle form submission logic here (e.g., API call)
-      this.name = '';
-      this.email = '';
-      this.message = '';
+    async submitForm() {
+      try {
+        const formData = new FormData();
+        formData.append("access_key", this.accessKey);
+        formData.append("name", this.name);
+        formData.append("email", this.email);
+        formData.append("message", this.message);
+        formData.append("botcheck", ""); // honeypot spam protection
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData,
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          alert(`Thank you, ${this.name}. Your message has been sent successfully!`);
+        } else {
+          alert("There was an issue sending your message. Please try again.");
+        }
+
+        // Clear the form
+        this.name = '';
+        this.email = '';
+        this.message = '';
+
+      } catch (error) {
+        alert("An error occurred while sending the message.");
+        console.error("Form submission error: ", error);
+      }
     },
   },
 };

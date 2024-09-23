@@ -3,7 +3,7 @@
     <!-- Navbar -->
     <nav class="navbar">
       <div class="navbar-header">
-        <router-link class="navbar-brand" to="/home" style="color:white ;">Vincent Car</router-link>
+        <router-link class="navbar-brand" to="/home" style="color:white ;">Vin-CarWash</router-link>
         <button class="navbar-toggler" type="button" @click="toggleNavbar">
           <span class="navbar-toggler-icon"></span>
           <span class="navbar-toggler-icon"></span>

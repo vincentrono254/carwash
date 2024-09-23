@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: "ServicePage",
+  name: "ServiceComponent",
   data() {
     return {
       services: [
