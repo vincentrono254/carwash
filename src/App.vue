@@ -64,9 +64,9 @@ export default {
 <style scoped>
 /* Global Color Variables */
 :root {
-  --primary-color: #1abc9c; /* Soft teal green */
-  --secondary-color: #2c3e50; /* Dark slate blue */
-  --accent-color: #f39c12;    /* Bright orange accent */
+  --primary-color: #1abc9c; 
+  --secondary-color: #2c3e50; 
+  --accent-color: #f39c12;    
   --text-color: #ffffff;
   --footer-bg: #34495e;
 }

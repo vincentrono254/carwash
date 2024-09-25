@@ -11,7 +11,7 @@
       </div>
       <div class="info-card">
         <h3 class="info-title">Email</h3>
-        <p class="info-detail">contact@vincentcarwash.com</p>
+        <p class="info-detail">vincentrono3030@gmail.com</p>
       </div>
       <div class="info-card">
         <h3 class="info-title">Postal Address</h3>
@@ -49,7 +49,7 @@ export default {
       name: '',
       email: '',
       message: '',
-      accessKey: '93c7a6c1-4c29-4ee2-ba27-a188c4297895', // Replace with your access key
+      accessKey: '93c7a6c1-4c29-4ee2-ba27-a188c4297895', 
     };
   },
   methods: {
@@ -60,7 +60,7 @@ export default {
         formData.append("name", this.name);
         formData.append("email", this.email);
         formData.append("message", this.message);
-        formData.append("botcheck", ""); // honeypot spam protection
+        formData.append("botcheck", ""); 
 
         const response = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
@@ -103,7 +103,7 @@ export default {
 
 .contact-title {
   font-size: 3.5rem;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-transform: uppercase;
   color: transparent;
   background: linear-gradient(90deg, #1abc9c, #16a085);
@@ -126,7 +126,7 @@ export default {
 .contact-info {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 20px;
   margin-bottom: 40px;
 }
 
@@ -156,7 +156,7 @@ export default {
 
 .form-title {
   font-size: 2.5rem;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   color: #16a085;
 }
 
@@ -166,7 +166,7 @@ export default {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .form-group label {
@@ -193,7 +193,7 @@ export default {
 }
 
 textarea {
-  height: 150px;
+  height: 100px;
 }
 
 .submit-button {

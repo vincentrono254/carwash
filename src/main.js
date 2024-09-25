@@ -14,7 +14,7 @@ const routes = [
   { path: "/services", component: ServicesComponent },
   { path: "/about", component: AboutUs },
   { path: "/contact", component: ContactUs },
-  { path: "/", redirect: "/home" }, // Redirect root to home
+  { path: "/", redirect: "/home" }, 
 ];
 
 // Instance of the router
@@ -23,7 +23,7 @@ const router = createRouter({
   routes,
 });
 
-// Create an instance of the app
+
 const app = createApp(App);
 app.use(router);
 app.mount("#app");
